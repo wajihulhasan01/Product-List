@@ -4,39 +4,58 @@ body {
     margin: 0;
     padding: 0;
 }
-
 .container {
-    width: 80%;
+    width: 90%;
+    max-width: 1200px;
     margin: 20px auto;
     text-align: center;
 }
-
 h1 {
     color: #333;
+    margin-bottom: 20px;
 }
-
 .product-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    gap: 20px;
 }
-
 .product-item {
     background: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
     margin: 10px;
     padding: 15px;
-    width: calc(25% - 40px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: calc(25% - 30px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
-
-.product-item img {
-    max-width: 100%;
-    border-radius: 5px;
+.product-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
-
 .product-item h3 {
     color: #007BFF;
-    font-size: 1.2em;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.product-item p {
+    color: #555;
+    margin: 5px 0;
+}
+@media (max-width: 992px) {
+    .product-item {
+        width: calc(33.33% - 30px);
+    }
+}
+@media (max-width: 768px) {
+    .product-item {
+        width: calc(50% - 30px);
+    }
+}
+@media (max-width: 576px) {
+    .product-item {
+        width: 100%;
+        margin: 10px auto;
+    }
 }
